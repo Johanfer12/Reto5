@@ -1,0 +1,12 @@
+SELECT 'Consulta 1';
+SELECT ob_titulo FROM obra ORDER BY ob_titulo ASC;
+SELECT 'Consulta 2';
+SELECT ob_titulo, ot_resumen, obrateatro.ot_anio FROM obra, obrateatro WHERE ot_id = ob_id AND obra.ob_id < 3000 AND obrateatro.ot_anio >= 2020 ORDER BY obra.ob_titulo ASC;
+SELECT 'Consulta 3';
+SELECT ob_titulo FROM obra, obrateatro WHERE ot_compañia = 105 AND ot_id = ob_id;
+SELECT 'Consulta 4';
+SELECT ob_titulo FROM obra, obraasistida WHERE oa_user = "rortiz" AND oa_obra = ob_id ORDER BY ob_titulo ASC;
+SELECT 'Consulta 5';
+SELECT asi_login, asi_nombre, asi_apellido FROM asistente, obraasistida WHERE oa_obra = 2002 AND oa_user = asi_login;
+SELECT 'Consulta 6';
+SELECT COUNT(*) ob_titulo FROM obra, obrateatro WHERE ot_id = ob_id AND obra.ob_id < 3000 AND obrateatro.ot_anio >= 2020;
